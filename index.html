@@ -15,43 +15,49 @@
         </header>
 
         <section class="calculateSection">
-            <label for="billAmount">bill amount 
-                <input class="inputBillAmount" type="number" name="bill" id="billAmount" placeholder="enter your bill amount">
-            </label>
-            <label for="billAmount">cash given 
-                <input class="inputCashAmount" type="number" name="bill" id="billAmount" placeholder="enter the cash given">
-            </label>
-            <button id="cashCheckBtn">check</button>
-
-            <p class="checkMessage"></p>
-
-            <caption>return change</caption>
-            <table class="cashTabkle">
-                <tr>
-                    <th>notes</th>
-                    <td class="denominationsAvailable">2000</td>
-                    <td class="denominationsAvailable">500</td>
-                    <td class="denominationsAvailable">100</td>
-                    <td class="denominationsAvailable">50</td>
-                    <td class="denominationsAvailable">20</td>
-                    <td class="denominationsAvailable">10</td>
-                    <td class="denominationsAvailable">5</td>
-                    <td class="denominationsAvailable">2</td>
-                    <td class="denominationsAvailable">1</td>
-                </tr>
-                <tr>
-                    <th>no. of notes</th>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                    <td class="numberOfNotesToGive"></td>
-                </tr>
-            </table>
+          <div class="cashBillCalc">
+              <label for="billAmount">bill amount 
+                  <input class="inputBillAmount" type="number" name="bill" id="billAmount" placeholder="enter your bill amount">
+              </label>
+              <button id="nextBtn">next</button>
+              <p class="checkMessage1"></p>
+          </div>  
+        </section>
+        <section class="cashReturnCalc">  
+              <label for="billAmount">cash given 
+                  <input class="inputCashAmount" type="number" name="bill" id="billAmount" placeholder="enter the cash given">
+              </label>
+              <button id="cashCheckBtn">check</button>
+  
+              <p class="checkMessage2"></p>
+  
+              <caption>return change</caption>
+              <table class="cashTabkle">
+                  <tr>
+                      <th>notes</th>
+                      <td class="denominationsAvailable">2000</td>
+                      <td class="denominationsAvailable">500</td>
+                      <td class="denominationsAvailable">100</td>
+                      <td class="denominationsAvailable">50</td>
+                      <td class="denominationsAvailable">20</td>
+                      <td class="denominationsAvailable">10</td>
+                      <td class="denominationsAvailable">5</td>
+                      <td class="denominationsAvailable">2</td>
+                      <td class="denominationsAvailable">1</td>
+                  </tr>
+                  <tr>
+                      <th>no. of notes</th>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                      <td class="numberOfNotesToGive"></td>
+                  </tr>
+              </table>
         </section>
 
     </div>
