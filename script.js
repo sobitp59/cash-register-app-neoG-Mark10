@@ -32,9 +32,16 @@ checkButton.addEventListener('click', function(){
     } else{
         const amountToBeReturned = inputCashAmount.value - inputBillAmount.value;
         checkMessage2.textContent = `Amount to be return is : ${amountToBeReturned}`;
+        returnMoney(amountToBeReturned);
       }
 });
 
 function returnMoney(amountToBeReturned){
-   console.log(amountToBeReturned);
+    for(let i = 0; i < availableNotes.length; i++){
+        const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
+        amountToBeReturned = amountToBeReturned % availableNotes[i];
+        numberOfNotesToGive[i].textContent = `X ${numberOfNotes}`
+        // console.log(`${availableNotes[i]} X ${numberOfNotes}`);
+    }
+//    console.log(amountToBeReturned);
 }
