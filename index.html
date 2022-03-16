@@ -5,60 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>My Cash Register | Sobit Prasad</title>
 </head>
 <body>
     <div class="container">
         <header class="header"> 
-            <h1>manage my cash</h1>
+            <h1>cash register</h1>
             <p>enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
         </header>
 
         <section class="calculateSection">
-          <div class="cashBillCalc">
               <label for="billAmount">bill amount 
-                  <input class="inputBillAmount" type="number" name="bill" id="billAmount" placeholder="enter your bill amount">
-              </label>
-              <button id="nextBtn">next</button>
+            </label>
+            <input class="inputBillAmount" type="number" name="bill" id="billAmount" placeholder="enter your bill amount">
+              <button id="nextBtn">next  <i class="fa-solid fa-circle-arrow-right"></i></button>
               <p class="checkMessage1"></p>
-          </div>  
         </section>
+
         <section class="cashReturnCalc">  
-              <label for="billAmount">cash given 
-                  <input class="inputCashAmount" type="number" name="bill" id="billAmount" placeholder="enter the cash given">
-              </label>
-              <button id="cashCheckBtn">check</button>
-  
-              <p class="checkMessage2"></p>
-  
-              <caption>return change</caption>
-              <table class="cashTabkle">
-                  <tr>
-                      <th>notes</th>
-                      <td class="denominationsAvailable">2000</td>
-                      <td class="denominationsAvailable">500</td>
-                      <td class="denominationsAvailable">100</td>
-                      <td class="denominationsAvailable">50</td>
-                      <td class="denominationsAvailable">20</td>
-                      <td class="denominationsAvailable">10</td>
-                      <td class="denominationsAvailable">5</td>
-                      <td class="denominationsAvailable">2</td>
-                      <td class="denominationsAvailable">1</td>
-                  </tr>
-                  <tr>
-                      <th>no. of notes</th>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                      <td class="numberOfNotesToGive"></td>
-                  </tr>
-              </table>
+           <div class="cashContainer">
+               <label for="billAmount">cash given 
+                 </label>
+                <input class="inputCashAmount" type="number" name="bill" id="billAmount" placeholder="enter the cash given">
+                 <button id="cashCheckBtn">check <i class="fa-solid fa-circle-check"></i></button>
+     
+                 <p class="checkMessage2"></p>
+           </div>  
+
+           <div class="calcTable">
+               <caption class="tableCaption">
+                   retun change
+                </caption>
+               <table class="cashTabkle">
+                   <tr>
+                       <th>notes</th>
+                       <td class="denominationsAvailable">2000</td>
+                       <td class="denominationsAvailable">500</td>
+                       <td class="denominationsAvailable">100</td>
+                       <td class="denominationsAvailable">50</td>
+                       <td class="denominationsAvailable">20</td>
+                       <td class="denominationsAvailable">10</td>
+                       <td class="denominationsAvailable">5</td>
+                       <td class="denominationsAvailable">2</td>
+                       <td class="denominationsAvailable">1</td>
+                   </tr>
+                   <tr>
+                       <th>no. of notes</th>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                       <td class="numberOfNotesToGive"></td>
+                   </tr>
+               </table>
+           </div>
         </section>
+
+        <footer class="footer">
+            <h3>let's connect</h3>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/sobit-prasad/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/sobitp59"><i class="fa-brands fa-github-alt"></i></a>
+                <a href="https://www.instagram.com/sobitprasad/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </footer>
 
     </div>
 

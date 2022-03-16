@@ -7,11 +7,14 @@ const checkMessage1 = document.querySelector('.checkMessage1');
 const checkMessage2 = document.querySelector('.checkMessage2');
 const notesToGive = document.querySelectorAll('.numberOfNotesToGive');
 const numberOfNotesToGive = document.querySelectorAll('.numberOfNotesToGive');
+const calculationTable = document.querySelector('.calcTable');
+
 
 const availableNotes = [2000, 500, 100, 50, 20, 10, 5, 2, 1];
 // console.log(availableNotes.length)
 
 cashReturnCalculator.style.display = 'none';
+calculationTable.style.display = 'none';
 
 nextButton.addEventListener('click', function(){
     if(inputBillAmount.value <= 0){
@@ -23,17 +26,19 @@ nextButton.addEventListener('click', function(){
 })
 
 checkButton.addEventListener('click', function(){  
-    if(inputCashAmount.value <= 0){
-        checkMessage2.textContent = 'cash amount cannot be negative or zero';
-    } else if(inputBillAmount.value > inputCashAmount.value){
-        checkMessage2.textContent = 'would you like to wash some dishes';
-    } else if(inputBillAmount.value == inputCashAmount.value){
-        checkMessage2.textContent = 'nothing to return';
-    } else{
+    if((inputCashAmount.value > inputBillAmount.value) && (inputBillAmount.value > 0) ){
         const amountToBeReturned = inputCashAmount.value - inputBillAmount.value;
         checkMessage2.textContent = `Amount to be return is : ${amountToBeReturned}`;
         returnMoney(amountToBeReturned);
-      }
+        calculationTable.style.display = 'block';
+    } else if(inputCashAmount.value === inputBillAmount.value){
+        checkMessage2.textContent = 'nothing to return';
+    } else if(inputCashAmount.value <= 0 || inputCashAmount.value < inputBillAmount.value){
+        checkMessage2.textContent = 'would you like to wash some dishes';
+        calculationTable.style.display = 'none';
+    } else{
+        checkMessage2.textContent = 'some error occurs'
+    }
 });
 
 function returnMoney(amountToBeReturned){
@@ -41,7 +46,5 @@ function returnMoney(amountToBeReturned){
         const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
         amountToBeReturned = amountToBeReturned % availableNotes[i];
         numberOfNotesToGive[i].textContent = `X ${numberOfNotes}`
-        // console.log(`${availableNotes[i]} X ${numberOfNotes}`);
     }
-//    console.log(amountToBeReturned);
 }
