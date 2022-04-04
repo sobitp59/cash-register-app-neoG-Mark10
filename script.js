@@ -17,7 +17,9 @@ cashReturnCalculator.style.display = 'none';
 calculationTable.style.display = 'none';
 
 nextButton.addEventListener('click', function(){
-    if(inputBillAmount.value <= 0){
+    console.log(typeof inputBillAmount.value);
+
+    if(Number(inputBillAmount.value) <= 0){
         checkMessage1.textContent = 'invalid bill amount';
     }else{
         checkMessage1.textContent = '';
@@ -26,14 +28,14 @@ nextButton.addEventListener('click', function(){
 })
 
 checkButton.addEventListener('click', function(){  
-    if((inputCashAmount.value > inputBillAmount.value) && (inputBillAmount.value > 0) ){
-        const amountToBeReturned = inputCashAmount.value - inputBillAmount.value;
+    if((Number(inputCashAmount.value) > Number(inputBillAmount.value)) && (Number(inputBillAmount.value) > 0) ){
+        const amountToBeReturned = Number(inputCashAmount.value) - Number(inputBillAmount.value);
         checkMessage2.textContent = `Amount to be return is : ${amountToBeReturned}`;
         returnMoney(amountToBeReturned);
         calculationTable.style.display = 'block';
-    } else if(inputCashAmount.value === inputBillAmount.value){
+    } else if(Number(inputCashAmount.value) === Number(inputBillAmount.value)){
         checkMessage2.textContent = 'nothing to return';
-    } else if(inputCashAmount.value <= 0 || inputCashAmount.value < inputBillAmount.value){
+    } else if(Number(inputCashAmount.value) <= 0 || Number(inputCashAmount.value) < Number(inputBillAmount.value)){
         checkMessage2.textContent = 'would you like to wash some dishes';
         calculationTable.style.display = 'none';
     } else{
@@ -45,6 +47,7 @@ function returnMoney(amountToBeReturned){
     for(let i = 0; i < availableNotes.length; i++){
         const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
         amountToBeReturned = amountToBeReturned % availableNotes[i];
+        // amountToBeReturned.style.backgroundColor = 'red';
         numberOfNotesToGive[i].textContent = `X ${numberOfNotes}`
     }
 }
