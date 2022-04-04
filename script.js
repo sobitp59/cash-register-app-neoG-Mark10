@@ -11,7 +11,6 @@ const calculationTable = document.querySelector('.calcTable');
 
 
 const availableNotes = [2000, 500, 100, 50, 20, 10, 5, 2, 1];
-// console.log(availableNotes.length)
 
 cashReturnCalculator.style.display = 'none';
 calculationTable.style.display = 'none';
@@ -47,7 +46,6 @@ function returnMoney(amountToBeReturned){
     for(let i = 0; i < availableNotes.length; i++){
         const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
         amountToBeReturned = amountToBeReturned % availableNotes[i];
-        // amountToBeReturned.style.backgroundColor = 'red';
         numberOfNotesToGive[i].textContent = `X ${numberOfNotes}`
     }
 }
